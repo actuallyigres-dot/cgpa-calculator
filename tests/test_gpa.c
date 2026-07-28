@@ -33,6 +33,12 @@ int testLetterGrade()
     return getLetterGrade(result)[0] == 'A' && getLetterGrade(result)[1] == '-';
 }
 
+int testRequiredGPA()
+{
+    double required = calculateRequiredGPA(3.50, 90, 3.60, 30);
+    return required > 3.89 && required < 3.91;
+}
+
 int testExpectedCGPA()
 {
     double expected = calculateExpectedCGPA(3.50, 90, 4.00, 30);
@@ -51,6 +57,8 @@ int main()
     if (testGradePoint()) passed++;
     total++;
     if (testLetterGrade()) passed++;
+    total++;
+    if (testRequiredGPA()) passed++;
     total++;
     if (testExpectedCGPA()) passed++;
 
